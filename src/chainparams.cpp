@@ -54,7 +54,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "RapidCoin! 05/06/2018";
+    const char* pszTimestamp = "RapidCoin! 06/06/2018";
     const CScript genesisOutputScript = CScript() << ParseHex("042b7b295a54dd7ef2bda1169b50ed4213de33e74d92853f6ac7080603db3fba249958620a856df8a92e9182f1bc77d0947af0476090ec59a3bd028ded903df38f") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -80,12 +80,12 @@ public:
         consensus.nMasternodePaymentsIncreaseBlock = 158000; // actual historical value
         consensus.nMasternodePaymentsIncreasePeriod = 576*30; // 17280 - actual historical value
         consensus.nInstantSendKeepLock = 24;
-        consensus.nBudgetPaymentsStartBlock = 6000; // actual historical value 
+        consensus.nBudgetPaymentsStartBlock = 6000; // actual historical value
         consensus.nBudgetPaymentsCycleBlocks = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         consensus.nBudgetPaymentsWindowBlocks = 100;
         consensus.nBudgetProposalEstablishingTime = 60*60*24;
-        consensus.nSuperblockStartBlock = 6500; // The block at which 12.1 goes live (end of final 12.0 budget cycle) 
-        consensus.nSuperblockCycle = 25000; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725 
+        consensus.nSuperblockStartBlock = 6500; // The block at which 12.1 goes live (end of final 12.0 budget cycle)
+        consensus.nSuperblockCycle = 25000; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         consensus.nGovernanceMinQuorum = 10;
         consensus.nGovernanceFilterElements = 20000;
         consensus.nMasternodeMinimumConfirmations = 15;
@@ -96,7 +96,7 @@ public:
         consensus.BIP34Hash = uint256S("0x000007d91d1254d60e2dd1ae580383070a4ddffa4c64c2eeb4a2f9ecc0414343");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
         consensus.nPowTargetTimespan = 10 * 60;
-        consensus.nPowTargetSpacing = 2.5 * 60; // Rapid: 2.5 minutes 
+        consensus.nPowTargetSpacing = 2.5 * 60; // Rapid: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 6200;
